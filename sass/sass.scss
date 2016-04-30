@@ -19,6 +19,10 @@
 		max-width: 1000px;
 		margin: auto;
 		padding: 0px 10px;
+		@media (max-width: 450px)
+		{
+			width: 100%;
+		}
 		.logo {
 		 	display: block;
 			height: 47px;
@@ -29,9 +33,10 @@
 		.number {
 			margin-top: 22px;
 			float: right;
-			@media (max-width: 360px) {
-				float: left;
-				font-size: 11px;
+			@media (max-width: 460px) {
+				padding: 1px 10px;
+				float: right;
+				//display: inline-block;
 			}
 			> a {
 				display: block;
@@ -42,9 +47,8 @@
 				&:focus {
 					color: #1db7c5;
 				}
-				@media (max-width: 360px) {
-				font-size: 15px;
-				padding-left: 10px;
+				@media (max-width: 460px) {
+				font-size: 16px;
 				}
 			}
 		}
@@ -53,7 +57,7 @@
 			margin: 0px;
 			box-sizing: border-box;
 			> input {
-				@media (max-width: 360px) {
+				@media (max-width: 768px) {
 					float: left;
 					margin-left: 0px;
 				}
@@ -76,7 +80,7 @@
 			}
 		}
 		> div .logo {
-			@media (max-width: 750px) {
+			@media (max-width: 768px) {
 				padding-top: 5px;
 				width: 200px;
 				margin: auto;
@@ -84,7 +88,7 @@
 			}
 		}
 		> div .right_header {
-			@media (max-width: 750px) {
+			@media (max-width: 768px) {
 				width: 300px;
 				margin: auto;
 				float: none;
