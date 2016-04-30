@@ -157,15 +157,13 @@ setInterval(function(){  //Автослайдер
 		document.getElementById('slider_image').style.opacity = 1; }
 }, 50);
 
-
-
 //выпаающее меню бутстраповское
 var open_close = true;
 function collapse_display_function() {
+if(open_close) {document.getElementById('navbarCollapse').classList.add("foo"); open_close = false; return }
+if(!open_close) {document.getElementById('navbarCollapse').classList.remove("foo"); open_close = true; return }	
+}
 
-if(open_close) {document.getElementById('navbarCollapse').classList.add("foo"); open_close = false; return
-}
-if(!open_close) {document.getElementById('navbarCollapse').classList.remove("foo"); open_close = true; return
-}
-	
+function show_contacts() {
+	alert('mob: +380(93)999-99-99 \nskype: evgeny2234 \nDruzhby narodov 268 str. ');
 }

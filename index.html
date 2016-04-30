@@ -59,13 +59,13 @@
             <ul class="nav navbar-nav navigation">
               <li><a href="#">HOME</a></li>
               <li class="nav-border"></li>
-              <li><a href="#">CATALOG</a></li>
+              <li><a href="#catalog_link">CATALOG</a></li>
               <li class="nav-border"></li>
               <li><a href="#">SHIPPING AND PAYMENT</a></li>
               <li class="nav-border"></li>
-              <li><a href="#">PRICE</a></li>
+              <li><a href="#priceList_downoad">PRICE</a></li>
               <li class="nav-border"></li>
-              <li><a href="#">CONTACTS</a></li>
+              <li><a href="#" id="alert_contacts" onclick="javascript: show_contacts();" >CONTACTS</a></li>
             </ul>
           </div>
         </nav>
@@ -88,12 +88,12 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xxs-6">
             
             <form>
-              <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" autofocus> 
+              <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search"> 
               <input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
-              <input class="button_for_search" type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
+              <input class="button_for_search" type="button" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
             </form>
 
-              <ul class="main_menu">
+              <ul class="main_menu" name="catalog_link" id="catalog_link">
                 <li id="list_ul">MacBook<ul class="secondary_menu" id="laptop"></ul>
                 </li>
                 <li id="list_ul">Ipod<ul class="secondary_menu" id="ipod"></ul>
@@ -106,7 +106,7 @@
               <!-- Меню слева  -->
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xxs-6">
-              <div class="price_download">
+              <div class="price_download" name="priceList_downoad" id="priceList_downoad">
                 <a href="img/main/readme.txt" download class="download_price" title="Click to download the price"></a>
                 <a href="img/main/readme.txt" download title="Click to download the price">Price List</a>
               </div>
