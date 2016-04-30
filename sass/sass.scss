@@ -118,6 +118,11 @@ div + .collapse {
 				display: inline-block;
 				border: 0px;
 				outline: none;
+				@media (max-width: 750px)
+				{
+					width: 40px;
+					height: 100px;
+				}
 			}
 			input:nth-child(1) {
 				float: left;
@@ -550,4 +555,8 @@ footer {   /* Весь Футер  */
 }
 body {
 	font-family: Arimo;
+}
+
+.foo {
+	display: block;
 }

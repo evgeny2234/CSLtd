@@ -6855,6 +6855,22 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 @media (min-width: 320px) {
         .download_price {
+            height: 40px;
+            width: 42px;
+            background:transparent url(../img/main/download.png) 0 0 no-repeat;
+            margin-left: 40px;
+          }
+          .price_download > a:nth-child(2){
+            display: block;
+            color: black;
+            padding-top: 7px;
+            font-size: 12px;
+            margin-left: 35px;
+
+          }
+      }
+      @media (min-width: 450px) {
+        .download_price {
             height: 142px;
             width: 139px;
             background:transparent url("../img/main/download_2.png") 0 0 no-repeat;

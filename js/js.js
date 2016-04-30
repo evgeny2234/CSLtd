@@ -156,3 +156,16 @@ setInterval(function(){  //Автослайдер
 	if(document.getElementById('slider_image').style.opacity==-0.04) {
 		document.getElementById('slider_image').style.opacity = 1; }
 }, 50);
+
+
+
+//выпаающее меню бутстраповское
+var open_close = true;
+function collapse_display_function() {
+
+if(open_close) {document.getElementById('navbarCollapse').classList.add("foo"); open_close = false; return
+}
+if(!open_close) {document.getElementById('navbarCollapse').classList.remove("foo"); open_close = true; return
+}
+	
+}
