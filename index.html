@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru" id="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CodeIT</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/sass.css" rel="stylesheet">
+    <!--<link href="sass/sass.scss" rel="stylesheet">-->
+    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+    <!-- Подключаем шрифт с гугла  -->
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <script></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Контейнер Всего сайта  -->
+      <header>
+        <!-- Хедер лендинга, все включая сладйдер  -->
+        <div class="row header_first_background">
+          <!-- Самый верхний хедер  с моб и лого-->
+          <div class="row header_first_front">
+            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-12">
+              <div class="logo">
+                <img src="img/header/logo.png" alt="OurCompany" width="200" height="47" title="CodeIT">
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12">
+              <div class="right_header">
+                <div class="feedback">
+                  <input type="button" class="feedback_button" title="give feedback" value="FEEDBACK" onclick="open_feedback()">
+                </div>
+                <div class="number">
+                  <!-- Номера для контакта с Нами -->
+                  <a class="our_number" href="tel:+30507777777" title="Feel free to call"> +380 (93) 777-77-77</a>
+                  <a class="our_number" href="tel:+30507777777" title="Feel free to call"> +380 (97) 777-77-77</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav role="navigation" class="navbar navbar-default">
+          <!-- Навигация в хедере   -->
+          <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navigation_header_open">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navigation">
+              <li><a href="#">HOME</a></li>
+              <li class="nav-border"></li>
+              <li><a href="#">CATALOG</a></li>
+              <li class="nav-border"></li>
+              <li><a href="#">SHIPPING AND PAYMENT</a></li>
+              <li class="nav-border"></li>
+              <li><a href="#">PRICE</a></li>
+              <li class="nav-border"></li>
+              <li><a href="#">CONTACTS</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="slider">
+          <!--(слайдер) --> 
+            <div class="image">
+              <img id="slider_image" src="img/header/slider/1.png" alt="Изображение 1" width="100%">
+            </div>
+            <div class="row buttons">
+              <input type="button" onclick="javascript: PrevPicture(); return false;">
+              <input type="button" onclick="javascript: NextPicture(); return false;">
+            </div>         
+        </div>
+      </header>
+      <main>
+        <!-- Все, что ежду хедером и футеров  -->
+        <div class="row main_content">
+          <div class="col-lg-1-95 col-md-12 col-sm-12 col-xs-6 col-xxs-12">
+            <!-- Левая колонка main_cntent  -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xxs-6">
+            
+            <form>
+              <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" autofocus> 
+              <input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
+              <input class="button_for_search" type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
+            </form>
+
+              <ul class="main_menu">
+                <li id="list_ul">MacBook<ul class="secondary_menu" id="laptop"></ul>
+                </li>
+                <li id="list_ul">Ipod<ul class="secondary_menu" id="ipod"></ul>
+                </li>
+                <li id="list_ul">Iphone<ul class="secondary_menu" id="iphone"></ul>
+                </li>
+                <li id="list_ul">Ipad<ul class="secondary_menu" id="ipad"></ul>
+                </li>
+              </ul>
+              <!-- Меню слева  -->
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xxs-6">
+              <div class="price_download">
+                <a href="img/main/readme.txt" download class="download_price" title="Click to download the price"></a>
+                <a href="img/main/readme.txt" download title="Click to download the price">Price List</a>
+              </div>
+              <!-- Закачка документа  -->
+            </div>
+            <!-- Левая часть main  -->
+          </div>
+          <div class="col-lg-8-05 col-md-12 col-sm-12 col-xs-6 col-xxs-12">
+            <!-- Основной контент с товарами  -->
+            <div class="row catalog" id="catalog">
+              <!-- через JS вставляем окошки с товаром -->
+              <a href="#"></a>
+            </div>
+          </div>
+          <div class="col-lg-8-05 col-md-12 col-sm-12 col-xs-12 under-pages">
+            <!-- Навигация по страницам  -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper lacinia auctor. Aliquam vitae mi ornare, tincidunt risus sed, euismod nisl. Nullam imperdiet nisi ut est imperdiet posuere. Cras sodales molestie enim eget porta. Vestibulum scelerisque blandit pulvinar. Donec condimentum malesuada neque a blandit. In sodales ex ac pharetra dictum. In interdum facilisis justo. Maecenas sit amet mi vitae purus ultrices fermentum. In vel orci erat. Suspendisse potenti. Donec arcu nunc, imperdiet id neque nec, mollis viverra nisl. Fusce egestas ligula vitae tristique dignissim.</p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper lacinia auctor. Aliquam vitae mi ornare, tincidunt risus sed, euismod nisl. Nullam imperdiet nisi ut est imperdiet posuere. Cras sodales molestie enim eget porta. Vestibulum scelerisque blandit pulvinar. Donec condimentum malesuada neque a blandit. In sodales ex ac pharetra dictum. In interdum facilisis justo. Maecenas sit amet mi vitae purus ultrices fermentum. In vel orci erat. Suspendisse potenti. Donec arcu nunc, imperdiet id neque nec, mollis viverra nisl. Fusce egestas ligula vitae tristique dignissim.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Конец основного блока -->
+      <footer>
+        <!-- Футер  -->
+        <div class="footer">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 copyright">
+              <p>© CoolShop 2016,<br>All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 footer_menu">
+              <ul class="footer_list">
+                <li><a href="https://vk.com/"></a></li>
+                <li><a href="https://facebook.com/"></a></li>
+                <li><a href="https://twitter.com/"></a></li>
+                <li><a href="https://plus.google.com/"></a></li>
+                <li><a href="https://www.linkedin.com/"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="b-popup" id="b-popup">
+        <div class="b-popup-content">
+          <input class="close" id="close" type="button" onclick="close_feedback()"> 
+          <form action="URL" class="feedback_form">
+            <h2><strong>FEEDBACK</strong></h2>
+            <label for="name">Name<em>*</em></label>
+            <input type="text" id="name" required name="Your_name" pattern="^[a-zA-Z]+$" placeholder="Name in english" autofocus>
+            <label for="phone">Phone<em>*</em></label>
+            <input type="tel" id="phone" required name="phone" pattern="[0-9]{1,2}\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="38(099)999-99-99">
+            <label for="email">Email<em>*</em></label>
+            <input type="email" id="email" required name="email" placeholder="example@gmail.com">
+            <label for="text">Text</label>
+            <textarea rows="5" cols="45" name="text" id="text">
+            </textarea>
+            <input type="submit" class="button_feedback" value="SUBMIT">
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Конец сайта -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script> 
+    <script type="text/javascript" src="js/js.js"></script>
+
+
+      
+  </body>
+</html>

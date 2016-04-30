@@ -1,0 +1,91 @@
+{
+  "product0": {
+    "productName": "Apple MacBook Pro Retina 15.4",
+    "productShirtDescription": "MacBook Pro с дисплеем Retina. Новое чувство мощи.",
+    "productPicture": "img/main/products/Apple-MacBook-Pro-Retina-15.4.png",
+    "productType": "Ноутбук",
+    "ProductCost": "$ 2538",
+    "productId": "id7531"
+  },
+  "product1": {
+    "productName": "Apple MacBook Air 11",
+    "productShirtDescription": "Ультра легкий ноутбук Apple MacBook Air 11",
+    "productPicture": "img/main/products/Apple-MacBook-Air-11.png",
+    "productType": "Ноутбук",
+    "ProductCost": "$ 1423",
+    "productId": "id7532"
+  },
+  "product2": {
+    "productName": "Apple iPhone 4S 16GB",
+    "productShirtDescription": "Новый смартфон Apple Iphone 4S 16GB CDMA",
+    "productPicture": "img/main/products/APPLE-IPHONE-4S-16GB.png",
+    "productType": "Смартфон",
+    "ProductCost": "$ 370",
+    "productId": "id7533"
+  },
+  "product3": {
+    "productName": "Apple iPhone 5С 32GB",
+    "productShirtDescription": "Новый смартфон Apple Iphone 5C 32GB Pink",
+    "productPicture": "img/main/products/APPLE-IPHONE-5С-32GB.png",
+    "productType": "Смартфон",
+    "ProductCost": "$ 512",
+    "productId": "id7534"
+  },
+  "product4": {
+    "productName": "Apple iPhone 6s 64Gb",
+    "productShirtDescription": "Мобильный телефон Apple iPhone 6s Plus 64GB Gold",
+    "productPicture": "img/main/products/Apple-Iphone-6s-64Gb.png",
+    "productType": "Смартфон",
+    "ProductCost": "$ 1250",
+    "productId": "id7535"
+  },
+  "product5": {
+    "productName": "Apple iPod 4g touch 32GB Gold",
+    "productShirtDescription": "iPod touch — это отличный способ уместить всю медиатеку в кармане.",
+    "productPicture": "img/main/products/Apple-iPod-touch-32GB-Gold.png",
+    "productType": "mp4",
+    "ProductCost": "$ 354.5",
+    "productId": "id7536"
+  },
+  "product6": {
+    "productName": "Apple iPod 3g touch 16Gb silver",
+    "productShirtDescription": "MP3-плеер Apple iPod touch 3Gen 16GB Silver",
+    "productPicture": "img/main/products/Apple-Ipod-touch-16Gb-silver.png",
+    "productType": "mp4",
+    "ProductCost": "$ 124",
+    "productId": "id7537"
+  },
+  "product7": {
+    "productName": "Apple iPod 5g touch 64Gb silver",
+    "productShirtDescription": "Купите Эпл Ipod touch 64gb за 458$. Доставка по Украине!",
+    "productPicture": "img/main/products/Apple-Ipod-5g-touch-64Gb-silver.png",
+    "productType": "mp4",
+    "ProductCost": "$ 458",
+    "productId": "id7538"
+  },
+  "product8": {
+    "productName": "Apple MacBook Air 13",
+    "productShirtDescription": "11-дюймовый MacBook Air. Новые процессоры 5-го поколения. ",
+    "productPicture": "img/main/products/Apple-MacBook-Air-13.png",
+    "productType": "Ноутбук",
+    "ProductCost": "$ 1057",
+    "productId": "id7539"
+  },
+  "product9": {
+    "productName": "Apple iPad Pro 16Gb",
+    "productShirtDescription": "Новый уникальный 12.9-inch iPad Pro Нового поколения!",
+    "productPicture": "img/main/products/Apple-iPad-Pro-16Gb.png",
+    "productType": "планшет",
+    "ProductCost": "$ 799",
+    "productId": "id7540"
+  },
+  "product11": {
+    "productName": "Apple iPad mini 32Gb",
+    "productShirtDescription": "Революционный Apple A1489 Ipad mini Air Wi-fi 32Gb",
+    "productPicture": "img/main/products/Apple-Ipad-mini-32Gb.png",
+    "productType": "планшет",
+    "ProductCost": "$ 1057",
+    "productId": "id7541"
+  }
+
+}
