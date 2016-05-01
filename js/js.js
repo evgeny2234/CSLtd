@@ -1,4 +1,3 @@
-
 //----------------JSON------------------------------------------
 function loadJSON(callback) {
     var request = new XMLHttpRequest();
@@ -74,86 +73,113 @@ function close_feedback() {
 
 //-------------------------------------Поиск по странице-----------------------------------------------------
 
-var input,search,pr,result,result_arr, locale_HTML, result_store;
+var input,search,pr,result,result_arr, locale_HTML = new Array();
 
-function func() {
- 	locale_HTML = document.body.innerHTML;   // сохраняем в переменную весь body (Первоначальный)
+window.onload = function(){  //ждем подгрузки Jsona и выполняем
+	for(var i=0;i<document.getElementsByClassName('place_for_live_search').length;i++)
+	{
+		locale_HTML[i]=document.getElementsByClassName('place_for_live_search')[i].innerHTML;
+	}
 }
-setTimeout(func, 1000);  //ждем подгрузки Jsona и выполняем
 
 function FindOnPage(name, status) {
-
-	input = document.getElementById(name).value; //получаем значение из поля в html
-	//input = numer.replace(/^\s+/g,'');
-	//input= numer.replace(/[ ]{1,}/g,' ');
-
-	if(input.length<3&&status==true)
+	var res_of_search = false;
+	for(var j=0;j<locale_HTML.length;j++)   //цикл проходит по всем объектам, с указанными классами. Т.е. чтоб добавить блок из DOM в список на поиск надо добавить ему класс 
 	{
-		alert('Для поиска вы должны ввести три или более символов');
-		function FindOnPageBack() { document.body.innerHTML = locale_HTML; }
-	}
-	
-	if(input.length>=3)
-	{
-		function FindOnPageGo() {
 
-			search = '/'+input+'/g';  //делаем из строки регуярное выражение
-			pr = document.body.innerHTML;   // сохраняем в переменную весь body
-			result = pr.match(/>(.*?)</g);  //отсекаем все теги и получаем только текст
-			result_arr = [];   //в этом массиве будем хранить результат работы (подсветку)
+			input = document.getElementById(name).value; //получаем значение из поля в html
+			input = input.replace(/^\s+/g,'');           //убираем первые пробелы
+			input = input.replace(/[ ]{1,}/g,' ');        //Заменяем много пробелом на 1
 
-			var warning = true;
-			for(var i=0;i<result.length;i++) {
-				if(result[i].match(eval(search))!=null) {
-					warning = false;
+			if(input.length<3&&status == true)
+			{	
+				for(var k=0;k<locale_HTML.length;k++)
+				{
+					document.getElementsByClassName('place_for_live_search')[k].innerHTML = locale_HTML[k];
+				}
+				return;
+			}
+			
+			if(input.length>=3)
+			{
+				function FindOnPageGo(j) {
+
+					search = '/'+input+'/g';  //делаем из строки регуярное выражение
+					pr = document.getElementsByClassName('place_for_live_search')[j].innerHTML;   // сохраняем в переменную весь body
+					result = pr.match(/>(.*?)</g);  //отсекаем все теги и получаем только текст
+					result_arr = [];   //в этом массиве будем хранить результат работы (подсветку)
+					
+					var warning = true;
+					for(var i = 0 ; i<result.length ; i++) {
+						if(result[i].match(eval(search)) != null) {
+							warning = false;
+						}
+					}
+					if(warning == false) {
+						res_of_search = true;
+					}
+
+					for(var i=0 ; i<result.length ; i++) {
+						result_arr[i] = result[i].replace(eval(search), '<span style="background-color:yellow;">'+input+'</span>'); //находим нужные элементы, задаем стиль и сохраняем в новый массив
+					}
+					for(var i=0 ; i<result.length ; i++) {
+						pr=pr.replace(result[i],result_arr[i])  //заменяем в переменной с html текст на новый из новогом ассива
+					}
+					document.getElementsByClassName('place_for_live_search')[j].innerHTML = pr;  //заменяем html код
 				}
 			}
-			if(warning == true) {
-				alert('Не найдено ни одного совпадения');
+			function FindOnPageBack() {
+			 	document.getElementsByClassName('place_for_live_search')[j].innerHTML = locale_HTML[j]; 
 			}
-
-			for(var i=0; i<result.length;i++) {
-				result_arr[i] = result[i].replace(eval(search), '<span style="background-color:yellow;">'+input+'</span>'); //находим нужные элементы, задаем стиль и сохраняем в новый массив
-			}
-			for(var i=0; i<result.length;i++) {
-				pr=pr.replace(result[i],result_arr[i])  //заменяем в переменной с html текст на новый из новогом ассива
-			}
-			document.body.innerHTML = pr;  //заменяем html код
-		}
+			if(status) { FindOnPageBack(); FindOnPageGo(j); } //чистим прошлое и Выделяем найденное
+			if(!status) { document.getElementById('text-to-find').value = ''; FindOnPageBack(); return; } //Снимаем выделение
 	}
-	function FindOnPageBack() { document.body.innerHTML = locale_HTML; }
-	if(status) { FindOnPageBack(); FindOnPageGo(); } //чистим прошлое и Выделяем найденное
-	if(!status) { FindOnPageBack(); } //Снимаем выделение
+	if(!res_of_search) {
+		alert('Совпадений не найдено');
+	}
 }
+
+var change = document.getElementById('text-to-find').value;  //Если значение поля изменилось - выполяем функцию поиска
+setInterval(function(){
+	var newchange = document.getElementById('text-to-find').value;
+	if(newchange == change) {
+		return;
+	}
+	if(newchange != change) {
+		FindOnPage('text-to-find', true)
+		change = newchange;
+	}
+}, 1000);
+
 //----------------SLIDER----------------
 var link_value = 'img/header/slider/';  //храню путь к папке
 var images = ['1.png','2.png','3.png'];  //храню названия фоток в слайдер
 var slider_img = document.getElementById('slider_image').src;
-var counter=0; //счетчик фотографий
+var counter = 0; //счетчик фотографий
 
 function PrevPicture() {  //Ручной слайдер влево
 	counter--;
-	if(counter==-1) {counter=images.length-1;}
+	if(counter == -1) {counter = images.length-1;}
 	document.getElementById('slider_image').setAttribute('src', link_value+images[counter]);
-	document.getElementById('slider_image').style.opacity=1;
+	document.getElementById('slider_image').style.opacity = 1;
 }
 function NextPicture() {  //Ручной слайдер Вправо
 	counter++;
-	if(counter==images.length) {counter=0;}
+	if(counter == images.length) {counter=0;}
 	document.getElementById('slider_image').setAttribute('src', link_value+images[counter]);
-	document.getElementById('slider_image').style.opacity=1;
+	document.getElementById('slider_image').style.opacity = 1;
 }
 
 document.getElementById('slider_image').style.opacity = 1;
 
 setInterval(function(){  //Автослайдер
-	if(document.getElementById('slider_image').style.opacity>=-1) {
+	if(document.getElementById('slider_image').style.opacity >= -1) {
 		document.getElementById('slider_image').style.opacity -= .002;}
-	if(document.getElementById('slider_image').style.opacity==0) {
+	if(document.getElementById('slider_image').style.opacity == 0) {
 		counter++;
 		if(counter==images.length) {counter=0;}
 		document.getElementById('slider_image').setAttribute('src', link_value+images[counter]); }
-	if(document.getElementById('slider_image').style.opacity==-0.04) {
+	if(document.getElementById('slider_image').style.opacity == -0.04) {
 		document.getElementById('slider_image').style.opacity = 1; }
 }, 50);
 

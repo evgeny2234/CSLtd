@@ -88,12 +88,12 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xxs-6">
             
             <form>
-              <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search"> 
+              <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" title="Введите 3 и более символа для поиска"> 
               <input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
               <input class="button_for_search" type="button" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
             </form>
 
-              <ul class="main_menu" name="catalog_link" id="catalog_link">
+              <ul class="main_menu place_for_live_search" name="catalog_link" id="catalog_link">
                 <li id="list_ul">MacBook<ul class="secondary_menu" id="laptop"></ul>
                 </li>
                 <li id="list_ul">Ipod<ul class="secondary_menu" id="ipod"></ul>
@@ -116,14 +116,14 @@
           </div>
           <div class="col-lg-8-05 col-md-12 col-sm-12 col-xs-6 col-xxs-12">
             <!-- Основной контент с товарами  -->
-            <div class="row catalog" id="catalog">
+            <div class="row catalog place_for_live_search" id="catalog">
               <!-- через JS вставляем окошки с товаром -->
               <a href="#"></a>
             </div>
           </div>
           <div class="col-lg-8-05 col-md-12 col-sm-12 col-xs-12 under-pages">
             <!-- Навигация по страницам  -->
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12 place_for_live_search">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper lacinia auctor. Aliquam vitae mi ornare, tincidunt risus sed, euismod nisl. Nullam imperdiet nisi ut est imperdiet posuere. Cras sodales molestie enim eget porta. Vestibulum scelerisque blandit pulvinar. Donec condimentum malesuada neque a blandit. In sodales ex ac pharetra dictum. In interdum facilisis justo. Maecenas sit amet mi vitae purus ultrices fermentum. In vel orci erat. Suspendisse potenti. Donec arcu nunc, imperdiet id neque nec, mollis viverra nisl. Fusce egestas ligula vitae tristique dignissim.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -133,7 +133,7 @@
         </div>
       </main>
       <!-- Конец основного блока -->
-      <footer>
+      <footer id="footer_id" class="">
         <!-- Футер  -->
         <div class="footer">
           <div class="row">
